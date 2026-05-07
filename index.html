@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VOID RP • Calculadora Penal PRD</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#06162b;
+color:white;
+}
+
+/* HEADER */
+
+header{
+padding:30px 20px;
+background:#102544;
+border-bottom:1px solid #1f4d8f;
+text-align:center;
+font-size:24px;
+font-weight:bold;
+color:#ffd500;
+}
+
+/* LOGO */
+
+.logo{
+width:170px;
+margin-bottom:15px;
+filter:drop-shadow(0 0 10px #000);
+}
+
+/* CONTAINER */
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
+}
+
+/* CARD */
+
+.card{
+background:#102544;
+padding:20px;
+border-radius:16px;
+border:1px solid #2d5fa8;
+margin-bottom:20px;
+box-shadow:0 0 20px #00000050;
+}
+
+.card h2{
+margin-bottom:15px;
+color:#ffffff;
+}
+
+/* INPUTS */
+
+input,
+textarea,
+select{
+
+width:100%;
+padding:12px;
+margin-top:10px;
+background:#0b2342;
+border:1px solid #2d5fa8;
+border-radius:10px;
+color:white;
+font-size:15px;
+
+}
+
+/* BUTTON */
+
+button{
+
+width:100%;
+padding:12px;
+margin-top:10px;
+border:none;
+border-radius:10px;
+background:linear-gradient(90deg,#ffd500,#2d7dff);
+color:white;
+font-weight:bold;
+cursor:pointer;
+font-size:15px;
+transition:0.2s;
+
+}
+
+button:hover{
+opacity:0.9;
+transform:scale(1.01);
+}
+
+/* CRIMES */
+
+.crime{
+
+padding:12px;
+background:#0b2342;
+border:1px solid #2d5fa8;
+border-radius:10px;
+margin-top:10px;
+
+}
+
+/* RESULTADO */
+
+.resultado{
+
+margin-top:15px;
+padding:15px;
+background:#0b2342;
+border-radius:10px;
+line-height:1.8;
+border:1px solid #2d5fa8;
+
+}
+
+/* RANGE */
+
+.range-box{
+
+margin-top:15px;
+padding:15px;
+background:#0b2342;
+border-radius:10px;
+border:1px solid #2d5fa8;
+
+}
+
+input[type="range"]{
+accent-color:#ffd500;
+}
+
+/* TOTAL */
+
+.total-box{
+
+margin-top:15px;
+padding:15px;
+background:#0d2f5c;
+border:1px solid #ffd500;
+border-radius:10px;
+line-height:2;
+font-size:16px;
+
+}
+
+/* UPLOAD */
+
+.upload-box{
+
+margin-top:15px;
+padding:15px;
+background:#0b2342;
+border-radius:10px;
+border:1px solid #2d5fa8;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<img 
+src="PRD.png"
+class="logo"
+alt="Logo PRD"
+>
+
+<br>
+
+🚔 VOID RP • CALCULADORA PENAL PRD
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>⚖️ Registrar Boletim PRD</h2>
+
+<input type="text" id="oficialNome" placeholder="Nome do Oficial">
+
+<input type="text" id="oficialId" placeholder="ID do Oficial">
+
+<input type="text" id="suspeitoNome" placeholder="Nome do Suspeito">
+
+<input type="text" id="suspeitoId" placeholder="ID do Suspeito">
+
+<textarea 
+id="descricao"
+rows="5"
+placeholder="Descrição da ocorrência">
+</textarea>
+
+<!-- UPLOADS -->
+
+<div class="upload-box">
+
+<label>📸 Imagens / Arquivos do Suspeito</label>
+
+<input type="file" id="arquivos" multiple>
+
+</div>
+
+<select id="crime">
+
+<optgroup label="🚗 INFRAÇÕES DE TRÂNSITO">
+
+<option>Art. 001 • Atropelamento Acidental • 10 meses</option>
+<option>Art. 002 • Alta Velocidade • 5 meses</option>
+<option>Art. 003 • Direção Perigosa/Contra Mão • 10 meses</option>
+<option>Art. 004 • Ultrapassar Sinal Vermelho • 5 meses</option>
+<option>Art. 005 • Dirigir Sem Habilitação • 15 meses</option>
+<option>Art. 006 • Andar com Veículo Danificado • 60 meses</option>
+<option>Art. 007 • Estacionar em Local Proibido • 5 meses</option>
+<option>Art. 008 • Dirigir Embriagado • 25 meses</option>
+<option>Art. 009 • Pilotar Moto Sem Capacete • 5 meses</option>
+<option>Art. 010 • Pousar Helicóptero em Local Indevido • 20 meses</option>
+<option>Art. 011 • Abandono de Veículo Público • 20 meses</option>
+
+</optgroup>
+
+<optgroup label="🟡 CRIMES LEVES">
+
+<option>Art. 012 • Usar Equipamento Balístico • 15 meses</option>
+<option>Art. 013 • Usar Equipamento Policial • 25 meses</option>
+<option>Art. 014 • Usar Máscara de Ocultação • 15 meses</option>
+<option>Art. 015 • Resistência à Prisão • 25 meses</option>
+<option>Art. 016 • Omissão de Socorro • 15 meses</option>
+<option>Art. 017 • Dano ao Patrimônio Público • 15 meses</option>
+<option>Art. 018 • Invasão • 25 meses</option>
+<option>Art. 019 • Difamação / Injúria / Calúnia • 20 meses</option>
+<option>Art. 020 • Furto • 30 meses</option>
+<option>Art. 021 • Porte de Balas Excedido • 10 meses</option>
+<option>Art. 022 • Fuga de Abordagem Policial • 40 meses</option>
+<option>Art. 023 • Tentativa de Suborno • 45 meses</option>
+<option>Art. 024 • Receptação • 20 meses</option>
+<option>Art. 025 • Tentativa de Roubo • 15 meses</option>
+<option>Art. 026 • Falso Testemunho • 20 meses</option>
+<option>Art. 027 • Obstrução de Justiça • 20 meses</option>
+<option>Art. 028 • Desobediência à Ordem Policial • 25 meses</option>
+<option>Art. 029 • Apropriação Indébita • 15 meses</option>
+<option>Art. 030 • Invasão de Privacidade • 20 meses</option>
+<option>Art. 031 • Vandalismo • 20 meses</option>
+<option>Art. 032 • Multas Pendentes • 5 meses</option>
+<option>Art. 033 • Desordem e Perturbação da Paz • 60 meses</option>
+<option>Art. 034 • Placa Clonada • 20 meses</option>
+<option>Art. 035 • Corrida Ilegal • 25 meses</option>
+
+</optgroup>
+
+<optgroup label="🟠 CRIMES MÉDIOS">
+
+<option>Art. 036 • Assalto à Caixa Eletrônica • 25 meses</option>
+<option>Art. 037 • Assalto à Caixa Registradora • 25 meses</option>
+<option>Art. 038 • Assalto a Banco ou Joalheria • 30 meses</option>
+<option>Art. 039 • Assalto à Loja • 30 meses</option>
+<option>Art. 040 • Assalto a Carro Forte • 30 meses</option>
+<option>Art. 041 • Portar Algemas • 15 meses</option>
+<option>Art. 042 • Portar Lockpick • 15 meses</option>
+<option>Art. 043 • Portar Masterpick • 15 meses</option>
+<option>Art. 044 • Portar Pendrive • 15 meses</option>
+<option>Art. 045 • Portar Keycard • 15 meses</option>
+<option>Art. 046 • Portar Capuz • 15 meses</option>
+<option>Art. 047 • Porte Ilegal de Arma Leve • 40 meses</option>
+<option>Art. 048 • Estelionato • 60 meses</option>
+<option>Art. 049 • Porte Ilegal de Arma Pesada • 60 meses</option>
+<option>Art. 050 • Tráfico de Drogas • 20 meses</option>
+<option>Art. 051 • Consumo Próprio de Drogas • 10 meses</option>
+<option>Art. 052 • Portar Dinheiro Sujo • 20 meses</option>
+<option>Art. 053 • Tráfico de Órgãos • 35 meses</option>
+<option>Art. 054 • Tráfico de Munição • 30 meses</option>
+<option>Art. 055 • Tráfico de Armas • 30 meses</option>
+<option>Art. 056 • Abuso de Autoridade • 35 meses</option>
+<option>Art. 057 • Desacato à Autoridade • 60 meses</option>
+<option>Art. 058 • Extorsão • 60 meses</option>
+<option>Art. 060 • Denunciação Caluniosa • 30 meses</option>
+<option>Art. 061 • Corrupção Ativa e Passiva • 55 meses</option>
+<option>Art. 062 • Ameaça • 60 meses</option>
+<option>Art. 063 • Ato Obsceno em Público • 60 meses</option>
+<option>Art. 064 • Porte Ilegal de Arma Branca • 25 meses</option>
+<option>Art. 065 • Furto/Roubo de Veículos • 60 meses</option>
+<option>Art. 066 • Lesão Corporal • 25 meses</option>
+<option>Art. 067 • Sequestro • 60 meses</option>
+<option>Art. 068 • Destruição de Evidência Física • 60 meses</option>
+<option>Art. 069 • Formação de Quadrilha • 60 meses</option>
+
+</optgroup>
+
+<optgroup label="🔴 CRIMES HEDIONDOS">
+
+<option>Art. 070 • Homicídio Culposo • 60 meses</option>
+<option>Art. 071 • Homicídio Doloso • 60 meses</option>
+<option>Art. 072 • Sequestro • 60 meses</option>
+<option>Art. 073 • Tentativa de Homicídio a Servidor Público • 60 meses</option>
+<option>Art. 074 • Roubo • 50 meses</option>
+<option>Art. 076 • Homicídio a Servidor Público • 60 meses</option>
+
+</optgroup>
+
+<optgroup label="🟣 CRIMES CONTRA A MULHER">
+
+<option>Art. 075 • Feminicídio • 60 meses</option>
+<option>Art. 077 • Violência Doméstica • 50 meses</option>
+<option>Art. 078 • Importunação Sexual • 50 meses</option>
+<option>Art. 079 • Perseguição (Stalking) • 50 meses</option>
+<option>Art. 080 • Violência Patrimonial • 25 meses</option>
+<option>Art. 081 • Discriminação de Gênero Feminino • 30 meses</option>
+<option>Art. 082 • Violência Psicológica • 30 meses</option>
+<option>Art. 083 • Divulgação de Cena Íntima • 60 meses</option>
+<option>Art. 084 • Cárcere Privado Qualificado • 60 meses</option>
+<option>Art. 085 • Assédio Moral • 55 meses</option>
+<option>Art. 086 • Tentativa de Feminicídio • 60 meses</option>
+
+</optgroup>
+
+</select>
+
+<button onclick="adicionarCrime()">
+➕ Adicionar Crime
+</button>
+
+<div id="listaCrimes"></div>
+
+<!-- REDUÇÃO -->
+
+<div class="range-box">
+
+<label>
+📉 REDUÇÃO DE PENA
+</label>
+
+<input
+type="range"
+id="reducao"
+min="0"
+max="50"
+value="0"
+oninput="atualizarReducao()"
+>
+
+<div style="margin-top:10px;">
+
+Redução aplicada:
+<b id="valorReducao">0%</b>
+
+</div>
+
+</div>
+
+<!-- TOTAL -->
+
+<div class="total-box">
+
+⏳ Pena Total:
+<b id="penaTotal">0 meses</b>
+
+<br>
+
+✅ Pena Final:
+<b id="penaFinal">0 meses</b>
+
+</div>
+
+<button onclick="registrarPRD()">
+⚖️ FINALIZAR BOLETIM PRD
+</button>
+
+<div class="resultado" id="resultado">
+
+Nenhum boletim registrado.
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* WEBHOOK */
+
+const webhookURL =
+"https://discord.com/api/webhooks/1502028378448986275/OO2GQ4kw5n_rF9EJrwKk0jKUjUkFkYl1aKB3gXabXK9MJnh1CmxFdHFFOtMrhvT_fFZ-";
+
+/* SISTEMA */
+
+let crimes = [];
+
+/* ADICIONAR CRIME */
+
+function adicionarCrime(){
+
+let crime =
+document.getElementById("crime").value;
+
+crimes.push(crime);
+
+renderCrimes();
+
+calcularPena();
+
+}
+
+/* RENDERIZAR */
+
+function renderCrimes(){
+
+let html = "";
+
+crimes.forEach((crime,index)=>{
+
+html += `
+<div class="crime">
+
+${crime}
+
+</div>
+`;
+
+});
+
+listaCrimes.innerHTML = html;
+
+}
+
+/* REDUÇÃO */
+
+function atualizarReducao(){
+
+valorReducao.innerText =
+document.getElementById("reducao").value + "%";
+
+calcularPena();
+
+}
+
+/* CALCULAR PENA */
+
+function calcularPena(){
+
+let totalMeses = 0;
+
+crimes.forEach(crime=>{
+
+let match =
+crime.match(/(\d+)\s*meses/i);
+
+if(match){
+
+totalMeses += parseInt(match[1]);
+
+}
+
+});
+
+let reducao =
+parseInt(document.getElementById("reducao").value);
+
+let mesesFinal =
+totalMeses - (totalMeses * reducao / 100);
+
+mesesFinal = Math.floor(mesesFinal);
+
+penaTotal.innerText =
+totalMeses + " meses";
+
+penaFinal.innerText =
+mesesFinal + " meses";
+
+}
+
+/* REGISTRAR */
+
+function registrarPRD(){
+
+let oficialNome =
+document.getElementById("oficialNome").value;
+
+let oficialId =
+document.getElementById("oficialId").value;
+
+let suspeitoNome =
+document.getElementById("suspeitoNome").value;
+
+let suspeitoId =
+document.getElementById("suspeitoId").value;
+
+let descricao =
+document.getElementById("descricao").value;
+
+let reducao =
+parseInt(document.getElementById("reducao").value);
+
+if(crimes.length <= 0){
+
+alert("Adicione pelo menos 1 crime.");
+
+return;
+
+}
+
+/* TOTAL */
+
+let totalMeses = 0;
+
+crimes.forEach(crime=>{
+
+let match =
+crime.match(/(\d+)\s*meses/i);
+
+if(match){
+
+totalMeses += parseInt(match[1]);
+
+}
+
+});
+
+let mesesFinal =
+totalMeses - (totalMeses * reducao / 100);
+
+mesesFinal = Math.floor(mesesFinal);
+
+/* ARQUIVOS */
+
+let arquivos =
+document.getElementById("arquivos").files;
+
+let nomesArquivos = [];
+
+for(let i = 0; i < arquivos.length; i++){
+
+nomesArquivos.push(arquivos[i].name);
+
+}
+
+/* TEXTO */
+
+let texto = `
+
+👮 OFICIAL:
+${oficialNome} (${oficialId})
+
+👤 SUSPEITO:
+${suspeitoNome} (${suspeitoId})
+
+⚖️ CRIMES:
+${crimes.join(", ")}
+
+⏳ PENA TOTAL:
+${totalMeses} meses
+
+📉 REDUÇÃO:
+${reducao}%
+
+✅ PENA FINAL:
+${mesesFinal} meses
+
+📂 ARQUIVOS:
+${nomesArquivos.join(", ") || "Nenhum"}
+
+📝 DESCRIÇÃO:
+${descricao}
+
+`;
+
+/* WEBHOOK */
+
+fetch(webhookURL,{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+username:"PRD VOID RP",
+
+embeds:[{
+
+title:"⚖️ NOVO BOLETIM PRD",
+
+description:"```" + texto + "```",
+
+color:16766720
+
+}]
+
+})
+
+})
+
+.then(()=>{
+
+resultado.innerHTML = `
+
+<b>✅ BOLETIM ENVIADO COM SUCESSO</b>
+
+<hr style="margin:10px 0;">
+
+<b>⏳ Pena Total:</b>
+${totalMeses} meses
+
+<br>
+
+<b>📉 Redução:</b>
+${reducao}%
+
+<br>
+
+<b>✅ Pena Final:</b>
+${mesesFinal} meses
+
+<br><br>
+
+<b>📂 Arquivos:</b>
+${nomesArquivos.join(", ") || "Nenhum"}
+
+<hr style="margin:10px 0;">
+
+${texto.replace(/\n/g,"<br>")}
+
+`;
+
+crimes = [];
+
+renderCrimes();
+
+calcularPena();
+
+})
+
+.catch(()=>{
+
+alert("Erro ao enviar webhook.");
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
