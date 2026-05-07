@@ -161,18 +161,6 @@ font-size:16px;
 
 }
 
-/* UPLOAD */
-
-.upload-box{
-
-margin-top:15px;
-padding:15px;
-background:#0b2342;
-border-radius:10px;
-border:1px solid #2d5fa8;
-
-}
-
 </style>
 
 </head>
@@ -213,88 +201,19 @@ rows="5"
 placeholder="Descrição da ocorrência">
 </textarea>
 
-<!-- UPLOADS -->
-
-<div class="upload-box">
-
-<label>📸 Imagens / Arquivos do Suspeito</label>
-
-<input type="file" id="arquivos" multiple>
-
-</div>
-
 <select id="crime">
 
-<optgroup label="🚗 INFRAÇÕES DE TRÂNSITO">
-
 <option>Art. 001 • Atropelamento Acidental • 10 meses</option>
-<option>Art. 002 • Alta Velocidade • 5 meses</option>
-<option>Art. 003 • Direção Perigosa/Contra Mão • 10 meses</option>
-<option>Art. 004 • Ultrapassar Sinal Vermelho • 5 meses</option>
-<option>Art. 005 • Dirigir Sem Habilitação • 15 meses</option>
-<option>Art. 006 • Andar com Veículo Danificado • 60 meses</option>
-<option>Art. 007 • Estacionar em Local Proibido • 5 meses</option>
-<option>Art. 008 • Dirigir Embriagado • 25 meses</option>
-<option>Art. 009 • Pilotar Moto Sem Capacete • 5 meses</option>
-<option>Art. 010 • Pousar Helicóptero em Local Indevido • 20 meses</option>
-<option>Art. 011 • Abandono de Veículo Público • 20 meses</option>
+<option>Art. 002 • Direção Perigosa • 15 meses</option>
+<option>Art. 003 • Fuga da Abordagem • 20 meses</option>
+<option>Art. 004 • Resistência à Prisão • 15 meses</option>
+<option>Art. 005 • Desacato • 10 meses</option>
+<option>Art. 006 • Porte Ilegal de Arma • 25 meses</option>
+<option>Art. 007 • Disparo em Via Pública • 30 meses</option>
+<option>Art. 008 • Roubo de Veículo • 35 meses</option>
+<option>Art. 009 • Formação de Quadrilha • 40 meses</option>
+<option>Art. 010 • Tráfico de Drogas • 45 meses</option>
 
-</optgroup>
-
-<optgroup label="🟡 CRIMES LEVES">
-
-<option>Art. 012 • Usar Equipamento Balístico • 15 meses</option>
-<option>Art. 013 • Usar Equipamento Policial • 25 meses</option>
-<option>Art. 014 • Usar Máscara de Ocultação • 15 meses</option>
-<option>Art. 015 • Resistência à Prisão • 25 meses</option>
-<option>Art. 016 • Omissão de Socorro • 15 meses</option>
-<option>Art. 017 • Dano ao Patrimônio Público • 15 meses</option>
-<option>Art. 018 • Invasão • 25 meses</option>
-<option>Art. 019 • Difamação / Injúria / Calúnia • 20 meses</option>
-<option>Art. 020 • Furto • 30 meses</option>
-<option>Art. 021 • Porte de Balas Excedido • 10 meses</option>
-<option>Art. 022 • Fuga de Abordagem Policial • 40 meses</option>
-<option>Art. 023 • Tentativa de Suborno • 45 meses</option>
-<option>Art. 024 • Receptação • 20 meses</option>
-<option>Art. 025 • Tentativa de Roubo • 15 meses</option>
-<option>Art. 026 • Falso Testemunho • 20 meses</option>
-<option>Art. 027 • Obstrução de Justiça • 20 meses</option>
-<option>Art. 028 • Desobediência à Ordem Policial • 25 meses</option>
-<option>Art. 029 • Apropriação Indébita • 15 meses</option>
-<option>Art. 030 • Invasão de Privacidade • 20 meses</option>
-<option>Art. 031 • Vandalismo • 20 meses</option>
-<option>Art. 032 • Multas Pendentes • 5 meses</option>
-<option>Art. 033 • Desordem e Perturbação da Paz • 60 meses</option>
-<option>Art. 034 • Placa Clonada • 20 meses</option>
-<option>Art. 035 • Corrida Ilegal • 25 meses</option>
-
-</optgroup>
-
-<optgroup label="🟠 CRIMES MÉDIOS">
-
-<option>Art. 036 • Assalto à Caixa Eletrônica • 25 meses</option>
-<option>Art. 037 • Assalto à Caixa Registradora • 25 meses</option>
-<option>Art. 038 • Assalto a Banco ou Joalheria • 30 meses</option>
-<option>Art. 039 • Assalto à Loja • 30 meses</option>
-<option>Art. 040 • Assalto a Carro Forte • 30 meses</option>
-<option>Art. 041 • Portar Algemas • 15 meses</option>
-<option>Art. 042 • Portar Lockpick • 15 meses</option>
-<option>Art. 043 • Portar Masterpick • 15 meses</option>
-<option>Art. 044 • Portar Pendrive • 15 meses</option>
-<option>Art. 045 • Portar Keycard • 15 meses</option>
-<option>Art. 046 • Portar Capuz • 15 meses</option>
-<option>Art. 047 • Porte Ilegal de Arma Leve • 40 meses</option>
-<option>Art. 048 • Estelionato • 60 meses</option>
-<option>Art. 049 • Porte Ilegal de Arma Pesada • 60 meses</option>
-<option>Art. 050 • Tráfico de Drogas • 20 meses</option>
-<option>Art. 051 • Consumo Próprio de Drogas • 10 meses</option>
-<option>Art. 052 • Portar Dinheiro Sujo • 20 meses</option>
-<option>Art. 053 • Tráfico de Órgãos • 35 meses</option>
-<option>Art. 054 • Tráfico de Munição • 30 meses</option>
-<option>Art. 055 • Tráfico de Armas • 30 meses</option>
-<option>Art. 056 • Abuso de Autoridade • 35 meses</option>
-<option>Art. 057 • Desacato à Autoridade • 60 meses</option>
-<option>Art. 058 • Extorsão • 60 meses</option>
 <option>Art. 060 • Denunciação Caluniosa • 30 meses</option>
 <option>Art. 061 • Corrupção Ativa e Passiva • 55 meses</option>
 <option>Art. 062 • Ameaça • 60 meses</option>
@@ -305,8 +224,6 @@ placeholder="Descrição da ocorrência">
 <option>Art. 067 • Sequestro • 60 meses</option>
 <option>Art. 068 • Destruição de Evidência Física • 60 meses</option>
 <option>Art. 069 • Formação de Quadrilha • 60 meses</option>
-
-</optgroup>
 
 <optgroup label="🔴 CRIMES HEDIONDOS">
 
@@ -324,9 +241,9 @@ placeholder="Descrição da ocorrência">
 <option>Art. 075 • Feminicídio • 60 meses</option>
 <option>Art. 077 • Violência Doméstica • 50 meses</option>
 <option>Art. 078 • Importunação Sexual • 50 meses</option>
-<option>Art. 079 • Perseguição (Stalking) • 50 meses</option>
+<option>Art. 079 • Stalking • 50 meses</option>
 <option>Art. 080 • Violência Patrimonial • 25 meses</option>
-<option>Art. 081 • Discriminação de Gênero Feminino • 30 meses</option>
+<option>Art. 081 • Discriminação Feminina • 30 meses</option>
 <option>Art. 082 • Violência Psicológica • 30 meses</option>
 <option>Art. 083 • Divulgação de Cena Íntima • 60 meses</option>
 <option>Art. 084 • Cárcere Privado Qualificado • 60 meses</option>
@@ -342,8 +259,6 @@ placeholder="Descrição da ocorrência">
 </button>
 
 <div id="listaCrimes"></div>
-
-<!-- REDUÇÃO -->
 
 <div class="range-box">
 
@@ -369,8 +284,6 @@ Redução aplicada:
 
 </div>
 
-<!-- TOTAL -->
-
 <div class="total-box">
 
 ⏳ Pena Total:
@@ -382,6 +295,12 @@ Redução aplicada:
 <b id="penaFinal">0 meses</b>
 
 </div>
+
+<input
+type="file"
+id="arquivo"
+accept="image/*,.pdf,.zip,.rar,.mp4"
+>
 
 <button onclick="registrarPRD()">
 ⚖️ FINALIZAR BOLETIM PRD
@@ -423,19 +342,17 @@ calcularPena();
 
 }
 
-/* RENDERIZAR */
+/* RENDER */
 
 function renderCrimes(){
 
 let html = "";
 
-crimes.forEach((crime,index)=>{
+crimes.forEach((crime)=>{
 
 html += `
 <div class="crime">
-
 ${crime}
-
 </div>
 `;
 
@@ -456,7 +373,7 @@ calcularPena();
 
 }
 
-/* CALCULAR PENA */
+/* CALCULAR */
 
 function calcularPena(){
 
@@ -493,7 +410,7 @@ mesesFinal + " meses";
 
 /* REGISTRAR */
 
-function registrarPRD(){
+async function registrarPRD(){
 
 let oficialNome =
 document.getElementById("oficialNome").value;
@@ -512,6 +429,9 @@ document.getElementById("descricao").value;
 
 let reducao =
 parseInt(document.getElementById("reducao").value);
+
+let arquivo =
+document.getElementById("arquivo").files[0];
 
 if(crimes.length <= 0){
 
@@ -543,19 +463,6 @@ totalMeses - (totalMeses * reducao / 100);
 
 mesesFinal = Math.floor(mesesFinal);
 
-/* ARQUIVOS */
-
-let arquivos =
-document.getElementById("arquivos").files;
-
-let nomesArquivos = [];
-
-for(let i = 0; i < arquivos.length; i++){
-
-nomesArquivos.push(arquivos[i].name);
-
-}
-
 /* TEXTO */
 
 let texto = `
@@ -578,25 +485,18 @@ ${reducao}%
 ✅ PENA FINAL:
 ${mesesFinal} meses
 
-📂 ARQUIVOS:
-${nomesArquivos.join(", ") || "Nenhum"}
-
 📝 DESCRIÇÃO:
 ${descricao}
 
 `;
 
-/* WEBHOOK */
+/* FORM */
 
-fetch(webhookURL,{
+let formData = new FormData();
 
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify({
+formData.append(
+"payload_json",
+JSON.stringify({
 
 username:"PRD VOID RP",
 
@@ -606,11 +506,35 @@ title:"⚖️ NOVO BOLETIM PRD",
 
 description:"```" + texto + "```",
 
-color:16766720
+color:16766720,
+
+image: arquivo ? {
+url:"attachment://" + arquivo.name
+} : undefined
 
 }]
 
 })
+);
+
+/* ARQUIVO */
+
+if(arquivo){
+
+formData.append(
+"file",
+arquivo
+);
+
+}
+
+/* ENVIAR */
+
+fetch(webhookURL,{
+
+method:"POST",
+
+body:formData
 
 })
 
@@ -635,15 +559,6 @@ ${reducao}%
 <b>✅ Pena Final:</b>
 ${mesesFinal} meses
 
-<br><br>
-
-<b>📂 Arquivos:</b>
-${nomesArquivos.join(", ") || "Nenhum"}
-
-<hr style="margin:10px 0;">
-
-${texto.replace(/\n/g,"<br>")}
-
 `;
 
 crimes = [];
@@ -651,6 +566,8 @@ crimes = [];
 renderCrimes();
 
 calcularPena();
+
+document.getElementById("arquivo").value = "";
 
 })
 
@@ -665,5 +582,4 @@ alert("Erro ao enviar webhook.");
 </script>
 
 </body>
-
 </html>
